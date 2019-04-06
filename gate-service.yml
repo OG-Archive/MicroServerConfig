@@ -1,0 +1,18 @@
+server:
+  port: 8765
+
+spring:
+  application:
+    name: gate-server
+    
+zuul:
+  routes:
+    account:
+      path: /reinbursments/**
+      serviceId: reinbursment-service
+      strip-prefix: false
+    customer:
+      path: /employees/**
+      serviceId: employee-service
+      strip-prefix: false
+      
